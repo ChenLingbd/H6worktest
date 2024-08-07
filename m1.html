@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>註冊帳號</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <form action="m1.php" method="post" name="myForm">
+      <table border="2" align="center" bordercolor="#6666FF">
+        <tr> 
+          <td colspan="2" bgcolor="#6666FF" align="center"> 
+            <font color="#FFFFFF">請填入下列資料 (標示「*」欄位請務必填寫)</font>
+          </td>
+        </tr>
+        <tr bgcolor="#99FF99"> 
+          <td align="right">*使用者帳號：</td>
+          <td><input name="account" type="text" size="15">(請使用英文或數字鍵)</td>
+        </tr>
+        <tr bgcolor="#99FF99"> 
+          <td align="right">*使用者密碼：</td>
+          <td><input name="password" type="password" size="15">(請使用英文或數字鍵)</td>
+        </tr>
+        <tr bgcolor="#99FF99"> 
+          <td align="right">*密碼確認：</td>
+          <td><input name="re_password" type="password" size="15">(再輸入一次密碼)</td>
+        </tr>
+        <tr bgcolor="#99FF99">
+          <td align="right">*姓名：</td>
+          <td><input name="name" type="text" size="8"></td>
+        </tr>
+        <tr bgcolor="#99FF99">
+          <td align="right">E-mail 帳號：</td>
+          <td><input name="email" type="text" size="30"></td>
+        </tr>
+        <tr bgcolor="#99FF99"> 
+          <td align="center" colspan="2"> 
+            <input type="submit" value="發送mail">
+            <input type="reset" value="重新填寫">
+            <input type="button" value="登入" onclick="window.location.href='m3.html';" >
+          </td> 
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

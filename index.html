@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .header {
+            width: 100%;
+            height: 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000; /* 确保 header 永远在顶部 */
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-bottom: 1px solid #ccc;
+        }
+        .title {
+            margin: 0;
+            padding-left: 10px;
+            font-size: 24px;
+            flex-shrink: 0; /* 防止标题缩小 */
+        }
+        .iframe-container {
+            flex-grow: 1; /* 让iframe占满剩余空间 */
+            height: 100%;
+        }
+        .content {
+            width: 100%;
+            height: calc(100% - 50px);
+            position: absolute;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">好書網</h1>
+        <div class="iframe-container">
+            <iframe id="header-iframe" src="" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+        </div>
+    </div>
+    <iframe id="content-iframe" class="content" src="m3.html" name="bottom" frameborder="0"></iframe>
+
+    <script>
+        function onLoginSuccess(isAdmin) {
+            if (isAdmin) {
+                document.getElementById('header-iframe').src = 'show_link2.html';
+            } else {
+                document.getElementById('header-iframe').src = 'show_link.html';
+            }
+        }
+        // 假設登入成功後，伺服器返回 isAdmin 變數表示是否為管理員
+        var isAdmin = true; // 或者從伺服器獲取此變數值
+
+        function onLogoutSuccess() {
+            document.getElementById('header-iframe').src = '';
+            location.reload(); // 重新載入或刷新當前頁面
+        }
+
+    </script>
+</body>
+</html>
